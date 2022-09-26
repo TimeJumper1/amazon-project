@@ -7,18 +7,20 @@ import {AppComponent} from './app.component';
 import {CoreModule} from "./core/core.module";
 import {ComponentsModule} from "./shared/components/components.module";
 import {HomeModule} from "./features/home/home.module";
+import {CartModule} from "./features/cart/cart.module";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    ComponentsModule,
-    HomeModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        CoreModule,
+        ComponentsModule,
+        HomeModule,
+        CartModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
