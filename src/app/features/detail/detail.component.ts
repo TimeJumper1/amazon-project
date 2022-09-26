@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ProductModel} from "../../shared/models/product.model";
 
 @Component({
   selector: 'app-detail',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+
+  @Input() product: ProductModel | undefined;
+  @Output() addToCart: EventEmitter<ProductModel> = new EventEmitter<ProductModel>();
 
   constructor() { }
 
