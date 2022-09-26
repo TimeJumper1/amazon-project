@@ -1,0 +1,28 @@
+.my-form-wrapper{
+  width: 40%;
+  padding: 2rem;
+}
+.my-select{
+  width: 40%;
+}
+.form-group{
+  margin: 10px;
+  label{
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+  }
+  input{
+    border-radius: 1rem;
+  }
+  small{
+    padding-left: 0.5rem;
+  }
+  select{
+    color: gray;
+    border-radius: 1rem;
+    padding: 0.3rem;
+    option{
+      color: black;
+    }
+  }
+}
