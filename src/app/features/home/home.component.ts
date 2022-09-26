@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductStore} from "../../core/Store/product.store";
+import {ProductModel} from "../../shared/models/product.model";
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  myProductStore: ProductModel[] = this.productStore.getProducts();
+  myCart: ProductModel[] = [];
+
+  constructor(private productStore: ProductStore) { }
 
   ngOnInit(): void {
   }
 
+  addProductToCart(product: ProductModel) {
+    this.myCart.push(product);
+    console.log(this.myCart);
+  }
 }
