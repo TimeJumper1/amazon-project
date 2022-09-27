@@ -73,7 +73,6 @@ export class ProductStore {
     return result
   }
 
-
   getByPriceBetween(price_start: number, price_end: number=0): ProductModel[] | string {
     let result: ProductModel[] = [];
     let void_list: string  = "No products found"
