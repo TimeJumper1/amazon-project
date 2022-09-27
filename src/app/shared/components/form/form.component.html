@@ -1,26 +1,31 @@
-<form class="my-form-wrapper">
+<form [formGroup]="myFormProduct" class="my-form-wrapper">
   <div class="form-group">
-    <label for="name">product name</label>
-    <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="enter the name of the products">
-    <small id="emailHelp" class="form-text text-muted">UwU</small>
+    <label for="title">product name</label>
+    <input formControlName="title" type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="enter the name of the products">
+    <small  class="form-text text-muted">UwU</small>
   </div>
   <div class="form-group">
     <label for="price">price</label>
-    <input type="number" class="form-control" id="price" placeholder="enter price">
-    <small id="emailHelp" class="form-text text-muted">pwease wenter a pwice ower 0 UwU</small>
+    <input formControlName="price" type="number" class="form-control" id="price" placeholder="enter price">
+    <small  class="form-text text-muted">pwease wenter a pwice ower 0 UwU</small>
   </div>
   <div class="form-group d-flex flex-column">
     <label for="category">select category</label>
-    <select name="category" id="category" class="my-select">
-      <option value="" disabled selected>choose an option</option>
-      <option value="0">books</option>
-      <option value="1">eletronics</option>
-      <option value="2">beauty</option>
-      <option value="3">fashion</option>
+    <select formControlName="category" name="category" id="category" class="my-select">
+      <option  [selected]="!myFormProduct.get('category')?.value"  disabled selected>choose an option</option>
+      <option [ngValue]="0" value="0">books</option>
+      <option [ngValue]="1" value="1">eletronics</option>
+      <option [ngValue]="2" value="2">beauty</option>
+      <option [ngValue]="3" value="3">fashion</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="description">insert description</label>
-    <textarea type="textarea" name="description" id="description" class="form-control" placeholder="insert a short description of the product"></textarea>
+    <label for="inStock">how many</label>
+    <input formControlName="inStock" type="number" class="form-control" id="inStock" placeholder="enter stockpile">
+    <small  class="form-text text-muted">pwease wenter a stwock nwumber ower 0 UwU</small>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="emitProduct()">confirm</button>
   </div>
 </form>
