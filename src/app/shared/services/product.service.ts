@@ -30,9 +30,16 @@ export class ProductService {
       this.store.setProducts(list)
     }
   }
+  deleteProduct(index:number): void{
+    let list: ProductModel[] | undefined = this.store.getProducts()
+    list.splice(index,1)
+    this.store.setProducts(list)
+  }
 
   addNewProduct(product:ProductModel): void{
     let list: ProductModel[] | undefined = this.store.getProducts()
+    let i = list[list.length-1];
+    product.id = i.id+1
     list.push(product)
     this.store.setProducts(list)
   }

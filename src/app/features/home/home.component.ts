@@ -20,10 +20,11 @@ export class HomeComponent implements OnInit {
   constructor(private productStore: ProductStore,
               private cartService: CartService,
               private fb:FormBuilder,
-              private productService:ProductService) { }
+              public productService:ProductService) { }
 
   ngOnInit(): void {
     this.myProductForm = this.fb.group({
+      id: this.fb.control(0),
       title: this.fb.control(''),
       price: this.fb.control(''),
       category: this.fb.control(''),
@@ -38,4 +39,5 @@ export class HomeComponent implements OnInit {
     this.productService.addNewProduct(product);
     // console.log(product);
   }
+
 }

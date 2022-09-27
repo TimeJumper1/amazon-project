@@ -11,6 +11,7 @@ export class CardComponent implements OnInit {
   @Input() myProductStore: ProductModel[] | undefined;
 
   @Output() addEmitter: EventEmitter<ProductModel> = new EventEmitter<ProductModel>();
+  @Output() sendIdEmitter: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() {
   }
@@ -20,5 +21,8 @@ export class CardComponent implements OnInit {
 
   emitProduct(product: ProductModel) {
     this.addEmitter.emit(product)
+  }
+  emitIndex(index:number){
+    this.sendIdEmitter.emit(index)
   }
 }

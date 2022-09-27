@@ -30,9 +30,9 @@ export class CartService {
     }
   }
 
-  deleteFromCart(id:number,number:number = 1): void{
+  deleteFromCart(index:number): void{
     let list: ProductModel[] | undefined = this.store.getProducts()
-    list.splice(id,1)
+    list.splice(index,1)
     this.store.setProducts(list)
   }
 

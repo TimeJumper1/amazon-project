@@ -1,4 +1,4 @@
-<div *ngFor="let product of myProductStore">
+<div *ngFor="let product of myProductStore, let i = index">
   <div class="my-card-wrapper m-1 " style="width: 18rem;">
     <img class="card-img-top " src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?cs=srgb&dl=pexels-pixabay-45201.jpg&fm=jpg" alt="Card image cap">
     <div class="w-100">
@@ -8,7 +8,7 @@
       <div class="d-flex justify-content-evenly my-btn-container">
         <div class="bottone d-flex w-100 justify-content-evenly mt-2">
           <p  class="btn btn-success w-25"  data-toggle="tooltip" data-placement="right" title="aggiungi al carrello" (click)="emitProduct(product)"><i class="fa-solid fa-cart-plus" ></i></p>
-          <p  class="btn btn-danger w-25" data-toggle="tooltip" data-placement="right" title="elimina prodotto" ><i class="fa-solid fa-trash"></i></p>
+          <p  class="btn btn-danger w-25" data-toggle="tooltip" data-placement="right" title="elimina prodotto" (click)="emitIndex(i)"><i class="fa-solid fa-trash"></i></p>
         </div>
       </div>
     </div>
