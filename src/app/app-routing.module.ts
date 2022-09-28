@@ -6,7 +6,7 @@ import {CartComponent} from "./features/cart/cart.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: 'detail', component: DetailComponent},
+  {path: 'detail/:id', component: DetailComponent},
   {path: 'cart', component: CartComponent},
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
