@@ -4,18 +4,21 @@ import {CommonModule} from '@angular/common';
 import {FooterComponent} from './layout/footer/footer.component';
 import {HeaderComponent} from "./layout/header/header.component";
 import {RouterLink} from "@angular/router";
+import { CategoryPipePipe } from './pipes/category-pipe.pipe';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CategoryPipePipe
   ],
-  exports: [
-    HeaderComponent,
-    FooterComponent
-  ],
+    exports: [
+        HeaderComponent,
+        FooterComponent,
+        CategoryPipePipe
+    ],
     imports: [
         CommonModule,
         RouterLink

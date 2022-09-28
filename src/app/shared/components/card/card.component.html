@@ -4,7 +4,7 @@
     <div class="w-100">
       <h5 class="card-title">{{product.title}}</h5>
       <h5 class="card-title">{{product.price | currency:'EUR'}}</h5>
-      <p class="card-text my-overflow mt-1">{{product.category}}, {{product.inStock}}</p>
+      <p class="card-text my-overflow mt-1">{{product.category | categoryPipe}}, in stock  {{product.inStock}}</p>
       <div class="d-flex justify-content-evenly my-btn-container">
         <div class="bottone d-flex w-100 justify-content-evenly mt-2">
           <p  class="btn btn-success w-25"  data-toggle="tooltip" data-placement="right" title="aggiungi al carrello" (click)="emitProduct(product)"><i class="fa-solid fa-cart-plus" ></i></p>

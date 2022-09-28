@@ -1,7 +1,21 @@
-.img-container{
-  width: auto;
-  img{
+.my-cart-wrapper{
+  border: 1px solid gray;
+  border-radius:0 10px 10px 0;
+  margin: 10px 2px;
+  width: 50%;
+  .img-container{
     width: auto;
-    height: 200px;
+    img{
+      width: auto;
+      height: 200px;
+    }
+  }
+  .scritte-container{
+    padding-left: 10px;
+    width: 100%;
+    p{
+      align-self: flex-end;
+      width: 3.5rem;
+    }
   }
 }

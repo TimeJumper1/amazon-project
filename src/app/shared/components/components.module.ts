@@ -4,6 +4,7 @@ import { FormComponent } from './form/form.component';
 import { CardComponent } from './card/card.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {CoreModule} from "../../core/core.module";
 
 
 
@@ -20,7 +21,8 @@ import {ReactiveFormsModule} from "@angular/forms";
   ],
     imports: [
         CommonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CoreModule
     ]
 })
 export class ComponentsModule { }
